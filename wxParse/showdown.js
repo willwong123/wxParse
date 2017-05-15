@@ -2295,7 +2295,7 @@ showdown.subParser('spanGamut', function (text, options, globals) {
   text = showdown.subParser('strikethrough')(text, options, globals);
 
   // Do hard breaks:
-  text = text.replace(/  +\n/g, ' <br />\n');
+  text = text.replace(/\s{2,}\n/g, ' <br />\n');
 
   text = globals.converter._dispatch('spanGamut.after', text, options, globals);
   return text;
